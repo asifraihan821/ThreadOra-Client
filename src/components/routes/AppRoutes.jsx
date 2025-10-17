@@ -8,25 +8,36 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 import PrivateRoute from "../PrivateRoute";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import Profile from "../pages/Profile";
+import ProductDetail from "../pages/ProductDetail";
+import Cart from "../pages/Cart";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* public routes */}
       <Route index path="/" element={<Home />} />
       <Route element={<MainLayout />}>
         <Route path="/shop" element={<Shop />} />
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="shop/:productId" element={<ProductDetail />} />
       </Route>
+      {/* private routes */}
       <Route
         path="dashboard"
         element={
           <PrivateRoute>
-            <Dashboard />
+            <DashboardLayout />
           </PrivateRoute>
         }
-      ></Route>
+      >
+        <Route index element={<Dashboard />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="cart" element={<Cart />} />
+      </Route>
     </Routes>
   );
 };

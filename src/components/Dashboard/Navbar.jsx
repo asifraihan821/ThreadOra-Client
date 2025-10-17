@@ -1,7 +1,7 @@
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router";
 
-const Navbar = ({ sidebarOpen }) => {
+const Navbar = ({ sidebarOpen, logOutUser }) => {
   return (
     <div>
       <div className="navbar bg-base-100 border-b">
@@ -15,7 +15,8 @@ const Navbar = ({ sidebarOpen }) => {
           </label>
         </div>
         <div className="flex-1">
-          <h2 className="text-lg font-semibold">Dashboard</h2>
+          <Link to="/">
+          <h2 className="text-lg font-semibold">Dashboard</h2></Link>
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">
@@ -41,7 +42,7 @@ const Navbar = ({ sidebarOpen }) => {
                 <Link href="/settings">Settings</Link>
               </li>
               <li>
-                <button>Logout</button>
+                <Link onClick={logOutUser}>Logout</Link>
               </li>
             </ul>
           </div>

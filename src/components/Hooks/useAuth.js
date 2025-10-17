@@ -16,6 +16,21 @@ const useAuth = () => {
     if (authTokens) fetchUserProfile();
   }, [authTokens]);
 
+  const handleApiError = ( error, defaultMessage = "Something went Wrong! Try Again.") => {
+          if (error.response && error.response.data) {
+        const errorMessage = Object.values(error.response.data)
+          .flat()
+          .join("\n");
+        setErrorMsg(errorMessage);
+        return { success: false, message: errorMessage };
+      }
+      setErrorMsg(defaultMessage);
+      return {
+        success: false,
+        message: defaultMessage,
+      };
+  }
+
   //fetch user profile
   const fetchUserProfile = async () => {
     try {
@@ -44,6 +59,18 @@ const useAuth = () => {
     }
   };
 
+  //update User Profile
+  const updateUserProfile = async(data) => {
+    setErrorMsg("");
+    try{
+      await authApiClient.put("/auth/users/me/", data, {headers: {
+        Authorization: `JWT ${authTokens?.access}`
+      }})
+    }catch(error) {
+      return handleApiError(error);
+    }
+  }
+
   //register user
   const registerUser = async (userData) => {
     setErrorMsg("");
@@ -54,20 +81,21 @@ const useAuth = () => {
         message: "Registration Successful. Redirecting...",
       };
     } catch (error) {
-      if (error.response && error.response.data) {
-        const errorMessage = Object.values(error.response.data)
-          .flat()
-          .join("\n");
-        setErrorMsg(errorMessage);
-        return { success: false, message: errorMessage };
-      }
-      setErrorMsg("Registration failed. Please Try again Later");
-      return {
-        success: false,
-        message: "Registration failed. Please Try again later.",
-      };
+      return handleApiError(error, "Registration failed Try Again later.")
     }
   };
+
+  //password Change
+  const changePassword = async (data) => {
+    setErrorMsg("");
+    try{
+      await authApiClient.post("/auth/users/set_password/", data,{headers: {
+        Authorization: `JWT ${authTokens?.access}`
+      }})
+    }catch(error){
+      return handleApiError(error);
+    }
+  }
 
   //logout user
   const logOutUser = async () => {
@@ -76,6 +104,6 @@ const useAuth = () => {
     localStorage.removeItem("authTokens");
   };
 
-  return { user, errorMsg, loginUser, registerUser, logOutUser };
+  return { user, errorMsg, loginUser, registerUser, logOutUser, updateUserProfile, changePassword, };
 };
 export default useAuth;
