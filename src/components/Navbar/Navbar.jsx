@@ -3,7 +3,7 @@ import SearchAndNotificatons from '../Navbar/SearchAndNotificatons';
 import Menu from '../Navbar/Menu';
 import Cart from '../Navbar/Cart';
 import Profile from '../Navbar/Profile';
-import useAuthContext from '../Hooks/useAuthContext';
+import useAuthContext from '../hooks/useAuthContext';
 import { Link } from 'react-router';
 
 const Navbar = () => {

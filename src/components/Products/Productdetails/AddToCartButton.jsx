@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaCheck, FaShoppingCart } from "react-icons/fa";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import useCartContext from "../../Hooks/UseCartContext";
+import useCartContext from "../../hooks/UseCartContext";
 
 
 const AddToCartButton = ({ product }) => {
