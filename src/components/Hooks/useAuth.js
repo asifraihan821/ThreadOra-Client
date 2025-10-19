@@ -52,10 +52,11 @@ const useAuth = () => {
       localStorage.setItem("authTokens", JSON.stringify(response.data));
       //agrer login set user
       await fetchUserProfile();
+      return {success: true};
     } catch (error) {
       console.log("login error", error.response?.data);
       setErrorMsg(error.response?.data?.detail);
-      throw error;
+      return {success: false};
     }
   };
 
@@ -102,6 +103,7 @@ const useAuth = () => {
     setAuthTokens(null);
     setUser(null);
     localStorage.removeItem("authTokens");
+    localStorage.removeItem("cartId");
   };
 
   return { user, errorMsg, loginUser, registerUser, logOutUser, updateUserProfile, changePassword, };

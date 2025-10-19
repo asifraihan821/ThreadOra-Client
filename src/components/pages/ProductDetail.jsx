@@ -4,6 +4,7 @@ import AddToCartButton from "../Products/Productdetails/AddToCartButton";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useParams } from "react-router";
 import apiClient from "../../services/apiClient";
+import ReviewSection from "../Reviews/ReviewSection";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
@@ -93,6 +94,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      <ReviewSection productId={productId}/>
     </div>
   );
 };

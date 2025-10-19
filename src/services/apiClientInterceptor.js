@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 const apiClientInterceptor = axios.create ({
-  baseURL: "https://thread-ora-fashion-web-store-amfy.vercel.app/api/v1/",
+  baseURL: "https://thread-ora-fashion-web-store.vercel.app/api/v1/",
 });
 
 export default apiClientInterceptor;

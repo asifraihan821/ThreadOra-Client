@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const authApiClient = axios.create({
-  baseURL: "https://thread-ora-fashion-web-store-amfy.vercel.app/",
+  baseURL: "https://thread-ora-fashion-web-store.vercel.app/",
 });
 
 export default authApiClient;

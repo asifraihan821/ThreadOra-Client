@@ -18,15 +18,16 @@ import ProductCard from "./ProductCard";
 //   { id: 6, title: "Contrasting Sunglasses", price: 59.0, image: img6, badge: "" },
 // ];
 
+import Featured from '../Products/TrndingProducts/Featured';
 
-const ProductsSection = ({ product }) => {
+const ProductsSection = () => {
   return (
     <section className="py-12 bg-gray-50">
       <div className="max-w-[1200px] mx-auto px-4">
         <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
 
         <div className="grid lg:grid-cols-6 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:w-full">
-            <ProductCard product={product} />
+            Coming Soon...
         </div>
       </div>
     </section>

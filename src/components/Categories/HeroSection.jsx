@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import women from "../../assets/img/categories/category-1.jpg";
 import SecondHeroSection from "./SecondHeroSection";
 
@@ -17,9 +18,10 @@ const HeroSection = ({ categories }) => {
           <p className="text-rose-400 text-2xl font-semibold pt-4">
             {firstCategory.description}
           </p>
+          <Link to="/shop">
           <button className="px-5 py-2 my-7 bg-pink-500 rounded-xl text-white font-semibold">
             Shop Now
-          </button>
+          </button></Link>
         </div>
       </div>
       <div className="lg:w-1/2 h-[700px] mr-0 lg:mr-2 my-3.5">

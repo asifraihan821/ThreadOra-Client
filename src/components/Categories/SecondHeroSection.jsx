@@ -17,10 +17,8 @@ const SecondHeroSection = ({ categories }) => {
         >
           <div className="py-19 px-9">
             <h1 className="text-white font-semibold text-2xl">Men's Fashion</h1>
-            <p className="text-gray-600 my-3">358 items</p>
-            <button className="bg-pink-500 px-5 py-2 rounded-xl text-white font-semibold">
-              Shop Now
-            </button>
+            <p className="text-white my-3">Elegant and casual dresses for women.</p>
+            <h1 className="text-pink-500 text-lg">Get your Product soon</h1>
           </div>
         </div>
         <div
@@ -29,10 +27,10 @@ const SecondHeroSection = ({ categories }) => {
         >
           <div className="py-19 px-9">
             <h1 className="text-white font-semibold text-2xl">Kid's Fashion</h1>
-            <p className="text-gray-600 my-3">987 items</p>
-            <button className="bg-pink-500 px-5 py-2 rounded-xl text-white font-semibold">
-              Shop Now
-            </button>
+            <p className="text-white my-3">Shirts, trousers and blazers for formal occasions.</p>
+            <h1 className="text-pink-500 font-semibold">
+              classy and Latest models .
+            </h1>
           </div>
         </div>
       </div>
@@ -43,10 +41,7 @@ const SecondHeroSection = ({ categories }) => {
         >
           <div className="py-19 px-9">
             <h1 className="text-white font-semibold text-2xl">Cosmetics</h1>
-            <p className="text-gray-600 my-3">858 items</p>
-            <button className="bg-pink-500 px-5 py-2 rounded-xl text-white font-semibold">
-              Shop Now
-            </button>
+            <p className="text-gray-600 my-3">Coming Soon...</p>
           </div>
         </div>
         <div
@@ -55,10 +50,8 @@ const SecondHeroSection = ({ categories }) => {
         >
           <div className="py-19 px-9">
             <h1 className="text-white font-semibold text-2xl">Accessories</h1>
-            <p className="text-gray-600 my-3">389 items</p>
-            <button className="bg-pink-500 px-5 py-2 rounded-xl text-white font-semibold">
-              Shop Now
-            </button>
+            <p className="text-gray-600 my-3">Coming Soon...</p>
+            
           </div>
         </div>
       </div>

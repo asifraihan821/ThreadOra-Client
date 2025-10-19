@@ -15,7 +15,7 @@ const Navbar = () => {
           <MainIcon />
         </div>
         <div className="navbar-center flex justify-between gap-8">
-          <SearchAndNotificatons />
+          {/* <SearchAndNotificatons /> */}
           <Menu />
         </div>
         <div className="navbar-end gap-7">

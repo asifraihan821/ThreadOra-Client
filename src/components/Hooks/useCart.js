@@ -3,7 +3,7 @@ import apiClientInterceptor from "../../services/apiClientInterceptor";
 
 const useCart = () => {
   const [authTokens] = useState(
-    () => JSON.parse(localStorage.getItem("authTokens")).access
+    () => JSON.parse(localStorage.getItem("authTokens"))?.access
   );
 
   const [cart, setCart] = useState(null);
@@ -28,7 +28,7 @@ const useCart = () => {
     }finally{
         setLoading(false);
     }
-  }, [authTokens]);
+  }, [cartId]);
 
 
   //add items to the cart
@@ -80,7 +80,7 @@ const useCart = () => {
    initializeCart();
   }, [createOrGetCart]);
 
-  return { cart,loading, createOrGetCart, addCartItems, updateCartItemQuantity, deleteCartitems };
+  return { cart,loading, cartId, createOrGetCart, addCartItems, updateCartItemQuantity, deleteCartitems };
 };
 
 export default useCart;
