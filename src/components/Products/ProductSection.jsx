@@ -27,7 +27,7 @@ const ProductsSection = () => {
         <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
 
         <div className="grid lg:grid-cols-6 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:w-full">
-            Coming Soon...
+            Our Featured Products will be shown Soon...
         </div>
       </div>
     </section>
