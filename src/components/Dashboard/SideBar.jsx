@@ -9,7 +9,7 @@ import {
   FiUsers,
 } from "react-icons/fi";
 import { Link } from "react-router";
-import useAuthContext from "../hooks/useAuthContext";
+import useAuthContext from "../reactcustomhooks/useAuthContext";
 
 const Sidebar = () => {
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import useAuthContext from './hooks/useAuthContext';
+import useAuthContext from './reactcustomhooks/useAuthContext';
 import { Navigate } from 'react-router';
 
 const PrivateRoute = ({children}) => {
