@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import useAuth from '../hooks/useAuth';
+import useAuth from '../reactcustomhooks/useAuth';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
