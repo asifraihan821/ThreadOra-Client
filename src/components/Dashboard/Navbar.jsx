@@ -16,7 +16,8 @@ const Navbar = ({ sidebarOpen, logOutUser }) => {
         </div>
         <div className="flex-1">
           <Link to="/">
-          <h2 className="text-lg font-semibold">Dashboard</h2></Link>
+            <h2 className="text-lg font-semibold">Dashboard</h2>
+          </Link>
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">
@@ -30,16 +31,16 @@ const Navbar = ({ sidebarOpen, logOutUser }) => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link href="/profile" className="justify-between">
+                <Link to="dashboard/profile" className="justify-between">
                   Profile
                   <span className="badge">New</span>
                 </Link>
               </li>
               <li>
-                <Link href="/settings">Settings</Link>
+                <a className="text-gray-400">Settings</a>
               </li>
               <li>
                 <Link onClick={logOutUser}>Logout</Link>

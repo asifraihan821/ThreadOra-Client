@@ -27,7 +27,7 @@ const Profile = ({logOutUser}) => {
           </Link>
         </li>
         <li>
-          <a>Settings</a>
+          <a className="text-gray-400">Settings</a>
         </li>
         <li>
           <Link onClick={logOutUser}>Logout</Link>
