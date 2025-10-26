@@ -61,12 +61,12 @@ const OrderCard = ({ order, onCancel }) => {
               <option value="PROCESSING">PROCESSING</option>
               <option value="SHIPPED">SHIPPED</option>
               <option value="DELIVERED">DELIVERED</option>
-              <option value="CANCELLED ">CANCELLED </option>
+              <option className="bg-red-500" value="CANCELLED ">CANCELLED </option>
             </select>
           ) : (
             <span
               className={`px-3 py-1 rounded-full text-white text-sm font-medium ${
-                order.status === "Not Paid" ? "bg-red-500" : "bg-green-500"
+                order.status === "Cancelled" ? "bg-red-500" : "bg-green-500"
               }`}
             >
               {order.status}
@@ -77,7 +77,7 @@ const OrderCard = ({ order, onCancel }) => {
             !user.is_staff && (
               <button
                 onClick={() => onCancel(order.id)}
-                className="text-blue-700 hover:underline"
+                className="text-red-700 hover:underline"
               >
                 Cancel
               </button>
@@ -97,14 +97,14 @@ const OrderCard = ({ order, onCancel }) => {
           </div>
           <div className="flex justify-between">
             <span>Shipping:</span>
-            <span>$0.00</span>
+            <span>10.00</span>
           </div>
           <div className="flex justify-between font-bold border-t pt-2">
             <span>Total:</span>
-            <span>${order.total_price}</span>
+            <span>{(order.total_price+10).toFixed(2)} tk.</span>
           </div>
         </div>
-        {!user.is_staff && order.status === "Not Paid" && (
+        {!user.is_staff && order.status === "Pending" && (
           <button
             className="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
             onClick={handlePayment}

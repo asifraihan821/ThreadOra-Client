@@ -1,5 +1,4 @@
 import axios from "axios";
-import React from "react";
 
 const apiClientInterceptor = axios.create ({
   baseURL: "https://thread-ora-fashion-web-store.vercel.app/api/v1/",

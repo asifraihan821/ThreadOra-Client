@@ -18,9 +18,8 @@ const useCart = () => {
       const newCartId = response.data.id;
       
       localStorage.setItem("cartId", newCartId);
-        setCartId(newCartId);
+      setCartId(newCartId);
       setCart(response.data);
-
       return newCartId;
 
     } catch (error) {
@@ -44,8 +43,20 @@ const useCart = () => {
         quantity,
       });
       console.log("added to cart:", response.data);
-      return response.data;
-    } catch (error) {
+
+      //locally marging the state
+      setCart(prevCart => {
+        if (!prevCart) {
+          return response.data // if firstTime
+        }
+        return {
+          ...prevCart, items: [...(prevCart.items || []), response.data],
+        };
+      });
+
+
+      return response.data
+      } catch (error) {
       console.log("Erorr adding items", error);
     }finally{
         setLoading(false);

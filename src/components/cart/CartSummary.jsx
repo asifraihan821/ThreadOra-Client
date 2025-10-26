@@ -9,6 +9,7 @@ const CartSummary = ({ totalPrice, itemCount, cartId }) => {
   const createOrder = async () => {
     try {
       const orderData = { cart_id: cartId }; 
+      console.log("Sending order data:", orderData);
       const response = await apiClientInterceptor.post("/orders/", orderData);
       console.log("Order created:", response.data);
       alert("Order placed successfully!");
@@ -31,7 +32,7 @@ const CartSummary = ({ totalPrice, itemCount, cartId }) => {
         <div className="space-y-2">
           <div className="flex justify-between">
             <span className="text-gray-500">Subtotal {itemCount} items</span>
-            <span>{totalPrice.toFixed(2)} tk.</span>
+            <span>{totalPrice} tk.</span>
           </div>
           <div className="flex justify-between">
             <span className="text-gray-500">Shipping</span>

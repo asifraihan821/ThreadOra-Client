@@ -35,7 +35,7 @@ const Cart = () => {
           ? {
               ...item,
               quantity: newQuantity,
-              total_price: item.product.price * newQuantity,
+              total_price: item.product?.price * newQuantity,
             }
           : item
       );
@@ -89,8 +89,8 @@ const Cart = () => {
         </div>
         <div>
           <CartSummary
-            totalPrice={localCart.total_price}
-            itemCount={localCart.items.length}
+            totalPrice={localCart?.total_price}
+            itemCount={localCart?.items?.length}
             cartId={cartId}
           />
         </div>
