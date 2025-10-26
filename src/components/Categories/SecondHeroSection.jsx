@@ -41,6 +41,7 @@ const SecondHeroSection = ({ categories }) => {
         >
           <div className="py-19 px-9">
             <h1 className="text-white font-semibold text-2xl">Cosmetics</h1>
+            <p className="mt-3 text-gray-500 text-lg">( Products are not ready yet )</p>
             <p className="text-gray-600 my-3">Coming Soon...</p>
           </div>
         </div>
@@ -50,6 +51,7 @@ const SecondHeroSection = ({ categories }) => {
         >
           <div className="py-19 px-9">
             <h1 className="text-white font-semibold text-2xl">Accessories</h1>
+            <p className="mt-3 text-gray-500 text-lg">( Products are not ready yet )</p>
             <p className="text-gray-600 my-3">Coming Soon...</p>
             
           </div>
